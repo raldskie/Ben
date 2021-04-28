@@ -1,0 +1,35 @@
+
+
+<div class="main">
+
+    <section class="signup">
+        <div class="container">
+            <h1 style="text-align: center; font-size: 50px;">Welcome, {{user}}</h1>
+            <div class="signup-content">
+                <form method="POST" action="/add-classmate" class="signup-form">
+                    <h2 class="form-title">Add Your Classmates' Names</h2>
+                    <div class="form-group">
+                        <input type="name" class="form-input" name="name" style="text-align: center;"
+                            placeholder="Full Name" />
+                        <input type="submit" name="submit" class="form-submit" value="Add Classmate" />
+                    </div>
+                    {{> messages}}
+                </form>
+                {{#each namesList}}
+                <h3>
+                    <a href="/delete-name/{{this._id}}"><span style="color: red;"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></span></a>
+                    {{this.fullName}}
+                    <a href="/edit-classmate/{{this._id}}"><span><i class="fa fa-pencil-square-o"
+                                aria-hidden="true"></i></span></a>
+                </h3>
+                {{/each}}
+            </div>
+            <a href="/sign-out" style="text-decoration: none;">
+                <p style="font-weight: bold;">SIGN OUT</p>
+            </a>
+
+        </div>
+    </section>
+
+</div>

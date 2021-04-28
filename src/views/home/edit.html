@@ -1,0 +1,21 @@
+<div class="main">
+
+    <section class="signup">
+        <!-- <img src="images/signup-bg.jpg" alt=""> -->
+        <div class="container">
+            <h1 style="text-align: center; font-size: 50px;">Hello, {{user}}</h1>
+            <div class="signup-content">
+                <form method="POST" action="/save-edit/{{id}}" id="save-edit" class="signup-form">
+                    <h2 class="form-title">Edit <span style="color: red;">{{name}}'s</span> Name</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="name" name="fullName" style="text-align: center;"
+                            placeholder="Full Name" value="{{name}}"/>
+                        <button class="form-submit">Save Changes</button>
+                    </div>
+                    {{> messages}}
+                </form>
+            </div>
+        </div>
+    </section>
+
+</div>
